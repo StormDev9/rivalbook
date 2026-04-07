@@ -7,8 +7,8 @@
     "scripts": {
         "test": "npm run compile && cls && electron .",
         "compile": "node ./compile.js",
-        "commit": "git commit -a",
-        "publish": "cls && npm run compile && npm run commit && electron-builder --publish always"
+        "commit": "git add . && git commit -m \"$npm_config_msg\"",
+        "publish": "npm run compile && npm run commit && git push && electron-builder --publish always"
     },
     "dependencies": {
         "electron-updater": "^6.8.3",
