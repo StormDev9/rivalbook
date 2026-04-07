@@ -1,14 +1,17 @@
 {
-    "version": "0.0.2",
     "name": "@storm/rivalbook",
+    "version": "0.0.2",
     "author": "StormCloud Developments",
+    "description": "RivalBook hero progression tracker",
     "type": "module",
     "main": "APP/boot.js",
     "scripts": {
-        "test": "npm run compile && cls && electron .",
+        "test": "npm run compile && electron .",
         "compile": "node ./compile.js",
-        "commit": "git add . && git commit -m \"$npm_config_msg\"",
-        "publish": "npm run compile && npm run commit && git push && electron-builder --publish always"
+        "commit": "git add . && git commit -m \"%npm_config_msg%\"",
+        "push": "git push",
+        "build-release": "electron-builder --publish always",
+        "publish": "npm run compile && npm run commit && npm run push && npm run build-release"
     },
     "dependencies": {
         "electron-updater": "^6.8.3",
@@ -38,9 +41,12 @@
             {
                 "provider": "github",
                 "owner": "StormDev9",
-                "repo": "rivalbookDev",
+                "repo": "rivalbook",
                 "releaseType": "release"
             }
-        ]
+        ],
+        "releaseInfo": {
+            "releaseName": "RivalBook Dev Build"
+        }
     }
 }
