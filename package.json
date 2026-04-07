@@ -38,7 +38,8 @@
             {
                 "provider": "github",
                 "owner": "StormDev9",
-                "repo": "rivalbook"
+                "repo": "rivalbook",
+                "releaseType": "release"
             }
         ]
     }

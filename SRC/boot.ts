@@ -1,12 +1,18 @@
 import { BrowserWindow, app } from "electron";
 
 import { PROJECT } from "./main.js";
-import updater from "electron-updater";
+import updateLib from "electron-updater";
+
+const { autoUpdater } = updateLib;
 
 console.log(PROJECT.root);
 app.on("ready", async () => {
     const win = new BrowserWindow();
     win.loadFile(PROJECT.getFilePath("test.html"));
 
-    updater.autoUpdater.checkForUpdatesAndNotify();
+    autoUpdater.checkForUpdatesAndNotify();
+
+    autoUpdater.on("update-downloaded", (info) => {
+        autoUpdater.quitAndInstall(); // forces install
+    });
 });
