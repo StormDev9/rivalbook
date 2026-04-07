@@ -7,6 +7,7 @@ export const hub = createServer(router);
 export const server = {
     running: false,
     port: 0,
+    path: serverPath,
 };
 
 export async function startServer() {
@@ -17,6 +18,7 @@ export async function startServer() {
     server.port = address.port;
     server.running = true;
     console.log(server);
+    console.log(serverPath("test.html"));
 }
 
 export function serverPath(path: string) {
