@@ -3,16 +3,13 @@
     "version": "0.0.1",
     "type": "module",
     "main": "APP/boot.js",
-    "publish": [
-        {
-            "provider": "github"
-        }
-    ],
     "scripts": {
         "test": "npm run compile && cls && electron .",
-        "compile": "node ./compile.js"
+        "compile": "node ./compile.js",
+        "publish": "electron-builder --publish always"
     },
     "dependencies": {
+        "electron-updater": "^6.8.3",
         "express": "^5.2.1"
     },
     "devDependencies": {
@@ -20,7 +17,27 @@
         "@types/express": "^5.0.6",
         "@types/node": "^25.5.2",
         "@types/typescript": "^0.4.29",
+        "dotenv": "^17.4.1",
         "electron": "^41.1.1",
+        "electron-builder": "^26.8.1",
         "typescript": "^6.0.2"
+    },
+    "build": {
+        "appId": "app.storm.rivalbook",
+        "productName": "RivalBook",
+        "directories": {
+            "output": "DIST",
+            "buildResources": "APP"
+        },
+        "files": [
+            "APP/**/*"
+        ],
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "StormDev9",
+                "repo": "rivalbook"
+            }
+        ]
     }
 }
