@@ -1,12 +1,14 @@
 {
+    "version": "0.0.2",
     "name": "@storm/rivalbook",
-    "version": "0.0.1",
+    "author": "StormCloud Developments",
     "type": "module",
     "main": "APP/boot.js",
     "scripts": {
         "test": "npm run compile && cls && electron .",
         "compile": "node ./compile.js",
-        "publish": "electron-builder --publish always"
+        "commit": "git commit -a",
+        "publish": "cls && npm run compile && npm run commit && electron-builder --publish always"
     },
     "dependencies": {
         "electron-updater": "^6.8.3",
