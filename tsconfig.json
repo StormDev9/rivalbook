@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "es2022",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "rootDir": "SRC",
+        "outDir": "APP",
+        "baseUrl": ".",
+        "paths": {},
+        "ignoreDeprecations": "6.0"
+    },
+    "include": ["SRC"]
+}

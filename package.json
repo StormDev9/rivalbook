@@ -1,0 +1,26 @@
+{
+    "name": "@storm/rivalbook",
+    "version": "0.0.1",
+    "type": "module",
+    "main": "APP/boot.js",
+    "publish": [
+        {
+            "provider": "github"
+        }
+    ],
+    "scripts": {
+        "test": "npm run compile && cls && electron .",
+        "compile": "node ./compile.js"
+    },
+    "dependencies": {
+        "express": "^5.2.1"
+    },
+    "devDependencies": {
+        "@types/electron": "^1.4.38",
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.5.2",
+        "@types/typescript": "^0.4.29",
+        "electron": "^41.1.1",
+        "typescript": "^6.0.2"
+    }
+}
